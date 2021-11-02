@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="exercise-1 canvas">
     <div class="parkspot-info-wrapper">
-      <display direction="⬆" place="0" name="P1" />
-      <display direction="⮕" place="55" name="P2" />
-      <display direction="⬅" place="101" name="P3" />
-      <display direction="⬆" place="110" name="P4" />
+      <display :direction="up" place="0" name="P1" />
+      <display :direction="right" place="5" name="P2" />
+      <display :direction="left" place="101" name="P3" />
+      <display :direction="up" place="110" name="P4" />
     </div>
   </div>
 </template>
@@ -14,6 +14,13 @@ import display from "./components/display";
 export default {
   components: { display },
   name: "App",
+  data() {
+    return {
+      up: "⬆",
+      right: "⮕",
+      left: "⬅",
+    };
+  },
 };
 </script>
 
