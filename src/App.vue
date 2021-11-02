@@ -2,7 +2,7 @@
   <div id="app" class="exercise-1 canvas">
     <div class="parkspot-info-wrapper">
       <display direction="⬆" place="0" name="P1" />
-      <display direction="⮕" place="-1" name="P2" />
+      <display direction="⮕" place="55" name="P2" />
       <display direction="⬅" place="101" name="P3" />
       <display direction="⬆" place="110" name="P4" />
     </div>

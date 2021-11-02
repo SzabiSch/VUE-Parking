@@ -1,5 +1,5 @@
 <template>
-  <div class="parkspot-info" :class="checkPalceStyle">
+  <div class="parkspot-info" :class="checkPlaceStyle">
     <div class="parkspot-info__arrow">{{ direction }}</div>
     <div class="parkspot-info__free-spaces">
       <span class="parkspot-info__count">{{ place }}</span>
@@ -18,7 +18,7 @@ export default {
     name: { type: String },
   },
   computed: {
-    checkPalceStyle() {
+    checkPlaceStyle() {
       if (this.place == 0) {
         return "parkspot-info--out";
       } else if (this.place < 10) {
