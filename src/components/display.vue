@@ -1,33 +1,37 @@
 <template>
-  <div id="app" class="exercise-1 canvas">
-    <div class="parkspot-info-wrapper">
-      <display direction="⬆" place="0" name="P1" />
-      <display direction="⮕" place="-1" name="P2" />
-      <display direction="⬅" place="101" name="P3" />
-      <display direction="⬆" place="110" name="P4" />
+  <div class="parkspot-info" :class="checkPalceStyle">
+    <div class="parkspot-info__arrow">{{ direction }}</div>
+    <div class="parkspot-info__free-spaces">
+      <span class="parkspot-info__count">{{ place }}</span>
+      <span class="parkspot-info__count-label">Freie Plätze</span>
     </div>
+    <div class="parkspot-info__name">{{ name }}</div>
   </div>
 </template>
 
 <script>
-import display from "./components/display";
 export default {
-  components: { display },
-  name: "App",
+  name: "display",
+  props: {
+    place: { type: Number, default: 0 },
+    direction: { type: String },
+    name: { type: String },
+  },
+  computed: {
+    checkPalceStyle() {
+      if (this.place == 0) {
+        return "parkspot-info--out";
+      } else if (this.place < 10) {
+        return "parkspot-info--few";
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.exercise-1.canvas {
-  font-family: Tahoma, Helvetica, sans-serif;
-}
-
-.parkspot-info-wrapper {
-  background-color: #34495e;
-  padding: 10px;
-  display: inline-block;
-}
-
 .parkspot-info {
   background-color: #3498db;
   color: #fff;
